@@ -1,9 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:language_picker/language_picker.dart';
 import 'package:amazon_prime_video_clone/pages/loginPage.dart';
 
 class selectLanguagePage extends StatefulWidget {
-  const selectLanguagePage({Key? key}) : super(key: key);
+  selectLanguagePage({Key? key}) : super(key: key);
 
   static const String pageId = 'selectLanguagePage';
 
@@ -16,7 +17,7 @@ class _selectLanguagePageState extends State<selectLanguagePage> {
   bool showLanguages = false;
 
   List<Item> categories = <Item>[
-    const Item('App Language - EN'),
+    Item('App Language - EN'),
   ];
   List<String> cat = [
     'English',
@@ -45,7 +46,7 @@ class _selectLanguagePageState extends State<selectLanguagePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xFF252E39),
+        backgroundColor: Color(0xFF252E39),
         appBar: _buildAppBar(),
         body: _buildBody(),
       ),
@@ -56,7 +57,7 @@ class _selectLanguagePageState extends State<selectLanguagePage> {
     return AppBar(
       automaticallyImplyLeading: false,
       elevation: 0,
-      backgroundColor: const Color(0xFF252E39),
+      backgroundColor: Color(0xFF252E39),
       flexibleSpace: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Row(
@@ -66,7 +67,7 @@ class _selectLanguagePageState extends State<selectLanguagePage> {
               onTap: () {
                 Navigator.pop(context);
               },
-              child: const Icon(
+              child: Icon(
                 Icons.close,
                 color: Colors.white,
               ),
@@ -84,10 +85,10 @@ class _selectLanguagePageState extends State<selectLanguagePage> {
           InkWell(
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const LoginPage()));
+                  MaterialPageRoute(builder: (context) => loginPage()));
             },
             child: Container(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 border: Border(
                   bottom: BorderSide(color: Colors.blueGrey),
                 ),
@@ -122,7 +123,7 @@ class _selectLanguagePageState extends State<selectLanguagePage> {
                         );
                       },
                       child: Container(
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           border: Border(
                             bottom: BorderSide(color: Colors.blueGrey),
                           ),
@@ -137,7 +138,7 @@ class _selectLanguagePageState extends State<selectLanguagePage> {
                                 children: [
                                   Icon(Icons.language,
                                       color: Colors.grey.shade300),
-                                  const SizedBox(width: 10),
+                                  SizedBox(width: 10),
                                   Text(
                                     e.name,
                                     style: TextStyle(
@@ -162,7 +163,7 @@ class _selectLanguagePageState extends State<selectLanguagePage> {
                         ? Column(
                             children: cat.map((item) {
                               return Container(
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFF1B2530),
                                   border: Border(
                                     bottom: BorderSide(color: Colors.blueGrey),
@@ -185,7 +186,7 @@ class _selectLanguagePageState extends State<selectLanguagePage> {
                               );
                             }).toList(),
                           )
-                        : const SizedBox(height: 0)
+                        : SizedBox(height: 0)
                   ],
                 );
               }).toList(),

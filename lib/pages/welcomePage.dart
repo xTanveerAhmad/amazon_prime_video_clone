@@ -1,7 +1,6 @@
 
-import 'package:amazon_prime_video_clone/pages/loginPage.dart';
 import 'package:flutter/material.dart';
-import 'package:amazon_prime_video_clone/pages/LoginPage.dart';
+import 'package:amazon_prime_video_clone/pages/loginPage.dart';
 import 'package:amazon_prime_video_clone/pages/selectLanguagePage.dart';
 import 'package:amazon_prime_video_clone/utilities/constancePage.dart'
     as style;
@@ -46,10 +45,10 @@ class _welcomePageState extends State<welcomePage> {
             children: [
               ClipRRect(
                 child: SizedBox.fromSize(
-                  size: const Size.fromRadius(30),
+                  size: Size.fromRadius(30),
                   child: FittedBox(
-                    fit: BoxFit.contain,
                     child: Image.asset('assets/images/l2.png'),
+                    fit: BoxFit.contain,
                   ),
                 ),
               ),
@@ -58,9 +57,9 @@ class _welcomePageState extends State<welcomePage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const selectLanguagePage()));
+                          builder: (context) => selectLanguagePage()));
                 },
-                child: const Icon(
+                child: Icon(
                   Icons.person_outline,
                   color: Colors.white,
                 ),
@@ -80,22 +79,22 @@ class _welcomePageState extends State<welcomePage> {
             height: 250,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: const AssetImage('assets/images/mp1.jpg'),
+                image: AssetImage('assets/images/mp1.jpg'),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
                     Colors.black.withOpacity(0.8), BlendMode.dstATop),
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
             child: Text(
               'Welcome To Prime Video',
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
             child: Text(
               'Join Prime to watch the latest movies, TV shows and award winning Amazon Originals.',
               textAlign: TextAlign.center,
@@ -107,14 +106,14 @@ class _welcomePageState extends State<welcomePage> {
             child: InkWell(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const LoginPage()));
+                    MaterialPageRoute(builder: (context) => loginPage()));
               },
               child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 13.0),
+                padding: EdgeInsets.symmetric(vertical: 13.0),
                 decoration: style.trialButtonStyle(),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text(
                       'Start your 30-day free trial',
                       style: TextStyle(
@@ -127,8 +126,8 @@ class _welcomePageState extends State<welcomePage> {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
             child: Text(
               'with select credit or debit card',
               textAlign: TextAlign.center,
@@ -136,25 +135,25 @@ class _welcomePageState extends State<welcomePage> {
             ),
           ),
           Container(
-            margin: const EdgeInsets.symmetric(vertical: 30),
-            padding: const EdgeInsets.all(10),
-            decoration: const BoxDecoration(
+            margin: EdgeInsets.symmetric(vertical: 30),
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
               color: Colors.white,
             ),
             child: Column(
               children: [
-                const Padding(
+                Padding(
                   padding:
-                      EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                   child: Text(
                     'Your fevorite channel all in one place',
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.black, fontSize: 25),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding:
-                      EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                   child: Text(
                     'with prime video channels. find shows and movies from your fevorite channels all in one place. enjoy with an add on subscription to channels to channels of your choice.',
                     textAlign: TextAlign.center,
@@ -179,23 +178,23 @@ class _welcomePageState extends State<welcomePage> {
           ),
           Container(
             height: 250,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/images/i1.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
             child: Text(
               'One membership, many benefits',
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
             child: Text(
               'Join Prime to watch the latest movies, TV shows and award winning Amazon Originals.',
               textAlign: TextAlign.center,
@@ -206,14 +205,15 @@ class _welcomePageState extends State<welcomePage> {
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => loginPage()));
               },
               child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 13.0),
+                padding: EdgeInsets.symmetric(vertical: 13.0),
                 decoration: style.trialButtonStyle(),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text(
                       'Get Started',
                       style: TextStyle(
@@ -229,8 +229,8 @@ class _welcomePageState extends State<welcomePage> {
           Container(
             height: 200,
             width: double.infinity,
-            margin: const EdgeInsets.only(top: 20),
-            decoration: const BoxDecoration(
+            margin: EdgeInsets.only(top: 20),
+            decoration: BoxDecoration(
               color: Color(0xFF1E1E1E),
             ),
             child: Column(
@@ -239,22 +239,22 @@ class _welcomePageState extends State<welcomePage> {
                 Container(
                   height: 50,
                   width: 100,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/images/l1.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
-                const Text(
+                Text(
                   'Terms and Privacy Notice Send us Feedback Help',
                   style: TextStyle(color: Colors.lightBlue),
                 ),
-                const Text(
+                Text(
                   '@ 1996-2022,Amazon.com,Inc or its addliates',
                   style: TextStyle(color: Colors.grey),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
               ],
             ),
           ),
@@ -267,9 +267,9 @@ class _welcomePageState extends State<welcomePage> {
     return Container(
       height: 100,
       width: 150,
-      margin: const EdgeInsets.all(5),
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      decoration: const BoxDecoration(
+      margin: EdgeInsets.all(5),
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      decoration: BoxDecoration(
         gradient: LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
@@ -280,7 +280,7 @@ class _welcomePageState extends State<welcomePage> {
           '$txt',
           textAlign: TextAlign.center,
           style:
-              const TextStyle(color: Colors.white, fontFamily: 'bold', fontSize: 17),
+              TextStyle(color: Colors.white, fontFamily: 'bold', fontSize: 17),
         ),
       ),
     );

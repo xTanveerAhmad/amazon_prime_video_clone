@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:amazon_prime_video_clone/pages/loginPage.dart';
 
 class myAccountPage extends StatefulWidget {
-  const myAccountPage({Key? key}) : super(key: key);
+  myAccountPage({Key? key}) : super(key: key);
 
   static const String pageId = 'myAccountPage';
 
@@ -16,7 +16,7 @@ class _myAccountPageState extends State<myAccountPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xFF0D171D),
+        backgroundColor: Color(0xFF0D171D),
         appBar: _buildAppBar(),
         body: _buildBody(),
       ),
@@ -29,8 +29,8 @@ class _myAccountPageState extends State<myAccountPage> {
       elevation: 0,
       backgroundColor: Colors.black,
       centerTitle: true,
-      title: const Padding(
-        padding: EdgeInsets.only(bottom: 12),
+      title: Padding(
+        padding: const EdgeInsets.only(bottom: 12),
         child: Text(
           'My Account',
           style:
@@ -45,7 +45,7 @@ class _myAccountPageState extends State<myAccountPage> {
               onTap: () {
                 Navigator.pop(context);
               },
-              child: const Icon(
+              child: Icon(
                 Icons.arrow_back,
                 color: Colors.white,
               ),
@@ -67,7 +67,7 @@ class _myAccountPageState extends State<myAccountPage> {
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
                     'Device Name : ',
                     style: TextStyle(color: Colors.white),
@@ -83,7 +83,7 @@ class _myAccountPageState extends State<myAccountPage> {
               padding: const EdgeInsets.symmetric(vertical: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
                     'This device is register to : ',
                     style: TextStyle(color: Colors.white),
@@ -97,11 +97,11 @@ class _myAccountPageState extends State<myAccountPage> {
             ),
             Container(
               height: 50,
-              margin: const EdgeInsets.symmetric(vertical: 10),
-              decoration: const BoxDecoration(
+              margin: EdgeInsets.symmetric(vertical: 10),
+              decoration: BoxDecoration(
                 color: Color(0xFF252E39),
               ),
-              child: const Center(
+              child: Center(
                 child: Text(
                   'Delete Account',
                   style: TextStyle(color: Colors.white),
@@ -111,15 +111,15 @@ class _myAccountPageState extends State<myAccountPage> {
             InkWell(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const LoginPage()));
+                    MaterialPageRoute(builder: (context) => loginPage()));
               },
               child: Container(
                 height: 50,
-                margin: const EdgeInsets.symmetric(vertical: 10),
-                decoration: const BoxDecoration(
+                margin: EdgeInsets.symmetric(vertical: 10),
+                decoration: BoxDecoration(
                   color: Color(0xFF252E39),
                 ),
-                child: const Center(
+                child: Center(
                   child: Text(
                     'Sign out',
                     style: TextStyle(color: Colors.white),

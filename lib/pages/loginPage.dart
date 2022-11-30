@@ -6,16 +6,16 @@ import 'package:amazon_prime_video_clone/pages/tabBarPage.dart';
 import 'package:amazon_prime_video_clone/utilities/constancePage.dart'
     as style;
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class loginPage extends StatefulWidget {
+  const loginPage({Key? key}) : super(key: key);
 
   static const String pageId = 'loginPage';
 
   @override
-  State<LoginPage> createState() => _loginPageState();
+  State<loginPage> createState() => _loginPageState();
 }
 
-class _loginPageState extends State<LoginPage> {
+class _loginPageState extends State<loginPage> {
   bool isChecked = false;
 
   @override
@@ -196,7 +196,7 @@ class _loginPageState extends State<LoginPage> {
               child: InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => registerPage()));
+                      MaterialPageRoute(builder: (context) => const registerPage()));
                 },
                 child: Container(
                   padding: const EdgeInsets.symmetric(vertical: 13.0),

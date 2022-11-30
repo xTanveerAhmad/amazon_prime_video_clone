@@ -1,20 +1,11 @@
-/*
-  Authors : initappz (Rahul Jograna)
-  Website : https://initappz.com/
-  App Name : Flutter UI Kit
-  This App Template Source code is licensed as per the
-  terms found in the Website https://initappz.com/license
-  Copyright and Good Faith Purchasers © 2021-present initappz.
-*/
+
 import 'package:flutter/material.dart';
-import 'package:amazon_prime_video_clone/utilities/constancePage.dart'
-    as style;
 
 const appColor = Colors.white;
 const itemColor = Color(0xFFE88216);
 
 contentButtonStyle() {
-  return BoxDecoration(
+  return const BoxDecoration(
       borderRadius: BorderRadius.all(
         Radius.circular(5),
       ),
@@ -29,7 +20,7 @@ contentButtonStyle() {
 }
 
 contentButtonStyle2() {
-  return BoxDecoration(
+  return const BoxDecoration(
       borderRadius: BorderRadius.all(
         Radius.circular(5),
       ),
@@ -45,21 +36,21 @@ contentButtonStyle2() {
 
 contentButtonWithOpacity() {
   return BoxDecoration(
-      borderRadius: BorderRadius.all(
+      borderRadius: const BorderRadius.all(
         Radius.circular(50.0),
       ),
       gradient: LinearGradient(
         begin: Alignment.centerLeft,
         end: Alignment.centerRight,
         colors: [
-          Color(0xFF8965E3).withOpacity(0.3),
-          Color(0xFF6A5AD0).withOpacity(0.3),
+          const Color(0xFF8965E3).withOpacity(0.3),
+          const Color(0xFF6A5AD0).withOpacity(0.3),
         ],
       ));
 }
 
 trialButtonStyle() {
-  return BoxDecoration(
+  return const BoxDecoration(
     borderRadius: BorderRadius.all(
       Radius.circular(5),
     ),
@@ -68,7 +59,7 @@ trialButtonStyle() {
 }
 
 googleButtonStyle() {
-  return BoxDecoration(
+  return const BoxDecoration(
     borderRadius: BorderRadius.all(
       Radius.circular(50.0),
     ),
@@ -77,7 +68,7 @@ googleButtonStyle() {
 }
 
 ChipButtonStyle() {
-  return BoxDecoration(
+  return const BoxDecoration(
     borderRadius: BorderRadius.all(
       Radius.circular(50.0),
     ),
@@ -86,7 +77,7 @@ ChipButtonStyle() {
 }
 
 otherButton() {
-  return BoxDecoration(
+  return const BoxDecoration(
     borderRadius: BorderRadius.all(
       Radius.circular(10.0),
     ),
@@ -96,9 +87,9 @@ otherButton() {
 
 borderButton() {
   return BoxDecoration(
-    borderRadius: BorderRadius.all(
+    borderRadius: const BorderRadius.all(
       Radius.circular(10.0),
     ),
-    border: Border.all(color: Color(0xFF6DD8D2)),
+    border: Border.all(color: const Color(0xFF6DD8D2)),
   );
 }
