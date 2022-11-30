@@ -1,0 +1,203 @@
+
+import 'package:flutter/material.dart';
+import 'package:amazon_prime_video_clone/pages/loginPage.dart';
+
+class selectLanguagePage extends StatefulWidget {
+  const selectLanguagePage({Key? key}) : super(key: key);
+
+  static const String pageId = 'selectLanguagePage';
+
+  @override
+  State<selectLanguagePage> createState() => _selectLanguagePageState();
+}
+
+class _selectLanguagePageState extends State<selectLanguagePage> {
+  String tabName = '';
+  bool showLanguages = false;
+
+  List<Item> categories = <Item>[
+    const Item('App Language - EN'),
+  ];
+  List<String> cat = [
+    'English',
+    'Hindi',
+    'Spanish',
+    'Japanese',
+    'Russian',
+    'Bengali',
+    'Telungu',
+    'Marathi',
+    'Turkey',
+    'Korean',
+    'French',
+    'Tamil',
+    'Italian',
+    'German',
+    'Gujrati',
+    'Hakka',
+    'Bhojpuri',
+    'Kannada',
+    'Polish',
+    'Malayalam',
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: const Color(0xFF252E39),
+        appBar: _buildAppBar(),
+        body: _buildBody(),
+      ),
+    );
+  }
+
+  PreferredSizeWidget _buildAppBar() {
+    return AppBar(
+      automaticallyImplyLeading: false,
+      elevation: 0,
+      backgroundColor: const Color(0xFF252E39),
+      flexibleSpace: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: const Icon(
+                Icons.close,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBody() {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()));
+            },
+            child: Container(
+              decoration: const BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(color: Colors.blueGrey),
+                ),
+              ),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 15),
+                    child: Text(
+                      'Sign in',
+                      style:
+                          TextStyle(color: Colors.grey.shade300, fontSize: 17),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            child: Column(
+              children: categories.map((e) {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        setState(
+                          () {
+                            showLanguages = !showLanguages;
+                          },
+                        );
+                      },
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(color: Colors.blueGrey),
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 15),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(Icons.language,
+                                      color: Colors.grey.shade300),
+                                  const SizedBox(width: 10),
+                                  Text(
+                                    e.name,
+                                    style: TextStyle(
+                                        color: Colors.grey.shade300,
+                                        fontSize: 17),
+                                  ),
+                                ],
+                              ),
+                              if (showLanguages == false)
+                                Icon(
+                                  Icons.arrow_drop_down,
+                                  color: Colors.grey.shade300,
+                                )
+                              else if (showLanguages == true)
+                                Container()
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    showLanguages == true
+                        ? Column(
+                            children: cat.map((item) {
+                              return Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFF1B2530),
+                                  border: Border(
+                                    bottom: BorderSide(color: Colors.blueGrey),
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 12, vertical: 15),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        item,
+                                        style: TextStyle(
+                                            color: Colors.grey.shade300,
+                                            fontSize: 17),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            }).toList(),
+                          )
+                        : const SizedBox(height: 0)
+                  ],
+                );
+              }).toList(),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Item {
+  const Item(this.name);
+  final String name;
+}
